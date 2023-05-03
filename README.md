@@ -16,3 +16,5 @@ Hover data shows:
 
 **Additonal graphs** <br>
 Graphs on the right hand side of the page show the distribution of the population age and income. These graphs are based on the mouse hovering over the points on the map. The graphs show the distributions for the country based on the current placing of the mouse. 
+
+*Note:* Geographical coordinates are randomly generated. Therefore, some of them appear in the sea.
