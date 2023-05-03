@@ -1,6 +1,6 @@
 # map-app
 Example Plotly Dash app
-This is a Plotly Dash app that views points on a map. The points can be anything that is identified by geographical coordinates (latitude, longitude). In this specific example, I am showing customers of a hypothetical company. 
+This is a Plotly Dash app that shows points on a map. The points can be anything that is identified by geographical coordinates (latitude, longitude). In this specific example, I am showing customers of a hypothetical company. 
 
 *Functionalities* <br><br>
 **Main map** <br>
