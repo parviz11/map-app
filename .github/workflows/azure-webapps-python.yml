@@ -46,8 +46,8 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python -m venv antenv
-          source antenv/bin/activate
+          python -m venv venv
+          source venv/bin/activate
           pip install --upgrade pip
 
       - name: Install dependencies
