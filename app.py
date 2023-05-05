@@ -31,7 +31,7 @@ external_stylesheets=[dbc.themes.BOOTSTRAP],
 
 df = pd.DataFrame(customers)"""
 
-df = pd.read_csv("test_data.csv")
+df = pd.read_csv("data/test_data.csv")
 
 
 # Import initial graphs
