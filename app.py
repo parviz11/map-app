@@ -4,10 +4,6 @@ import graphs
 
 import pandas as pd
 import numpy as np
-import os
-
-
-port = int(os.environ.get("PORT", 8080))
 
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
@@ -205,4 +201,4 @@ def update_hist(clickData):
 
 
 if __name__ == "__main__":
-    app.run_server(port=port,debug=True)
+    app.run_server(debug=True)
