@@ -8,6 +8,7 @@ import numpy as np
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
 app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 """
 external_stylesheets=[dbc.themes.BOOTSTRAP],
@@ -201,4 +202,4 @@ def update_hist(clickData):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=False, Port=8000)
