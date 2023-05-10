@@ -48,7 +48,7 @@ income_hist = graphs.inc_hist(df)
 
 app.layout = html.Div(
     [
-        html.H1("Geolocations of the active insurances"),
+        html.H1("Geolocations of the active customers."),
         html.Div(
             [
                 html.Div(
