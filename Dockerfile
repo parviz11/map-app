@@ -1,14 +1,30 @@
-FROM python:3.11
+# Use the official Python base image
+FROM python:3.11-slim
 
+# Debug mode is False
 ENV DASH_DEBUG_MODE False
-RUN apt-get update
-RUN apt-get install nano
- 
-RUN mkdir wd
-WORKDIR wd
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y nano
+
+# Copy the requirements file
 COPY requirements.txt .
-RUN pip3 install -r requirements.txt
-  
+
+# Create and activate the virtual environment
+RUN python -m venv venv
+RUN /bin/bash -c "source venv/bin/activate"
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code into the container
 COPY . .
-  
- CMD [ "gunicorn", "--workers=5", "--threads=1", "-b 0.0.0.0:80", "app:server"]
+
+# Expose the port on which your application runs
+EXPOSE 8050
+
+# Set the entry point for the container
+CMD ["gunicorn", "--workers=5", "--threads=1", "-b", "0.0.0.0:80", "app:server"]
