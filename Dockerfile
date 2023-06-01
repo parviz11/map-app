@@ -13,10 +13,6 @@ RUN apt-get update && apt-get install -y nano
 # Copy the requirements file
 COPY requirements.txt .
 
-# Create and activate the virtual environment
-RUN python -m venv venv
-RUN /bin/bash -c "source venv/bin/activate"
-
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
