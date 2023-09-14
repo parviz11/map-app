@@ -23,4 +23,4 @@ COPY . .
 EXPOSE 8050
 
 # Set the entry point for the container
-CMD ["gunicorn", "--workers=5", "--threads=1", "-b", "0.0.0.0:80", "app:server"]
+CMD ["gunicorn", "--workers=5", "--threads=1", "-b", "0.0.0.0:8000", "app:server"]
