@@ -114,14 +114,15 @@ def polygon_layer():
     geojson_obj = json.loads(geojson_data)
 
     # Create the polygon layer
-    layer_data = go.Choroplethmapbox(geojson=geojson_obj,
-                                    locations=gdf['TATORTSKOD'],
-                                    z=gdf['BEF'],
-                                    colorscale="Viridis",
-                                    zmin=gdf['BEF'].min(),
-                                    zmax=gdf['BEF'].max(),
-                                    featureidkey='properties.TATORTSKOD',
-                                    marker_opacity=0.5,
-                                    colorbar=dict(title='Population'),
-                                    )
-    return layer_data
+    layer_data = px.choropleth_mapbox(gdf, geojson=geojson_obj, featureidkey='properties.TATORTSKOD',
+                           locations='TATORTSKOD', color='BEF',
+                           
+                           color_continuous_scale="Viridis",
+                           mapbox_style="open-street-map",
+                           #zoom=3, center = {"lat": 55, "lon": 12},
+                           opacity=0.5,
+                           labels={'BEF':'Population'},
+                           hover_data={'TATORT': True, 'BEF': True, 'TATORTSKOD': False}
+                          )
+    layer_data.update_layout(coloraxis_showscale=False)
+    return layer_data.data[0]
